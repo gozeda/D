@@ -1,0 +1,7 @@
+<suite name="auto.d">
+	<test name="test">
+		<classes>
+			<class name="auto.HelloWorld"/>
+		</classes>
+	</test>
+</suite>
