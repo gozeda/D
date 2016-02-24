@@ -30,7 +30,7 @@
 	</target>
 	
 	<target name="build" depends="clean">
-		<javac srcdir="${src}" debug="true" sourcepathref="sourcepath" debuglevel="${debuglevel}" destdir="${bin}" includeAntRuntime="false" >	
+		<javac srcdir="${src}" debug="true" sourcepathref="sourcepath" debuglevel="${debuglevel}" destdir="${bin}" includeAntRuntime="false" encoding="utf-8">	
 			<classpath refid="classpath" />			
 		</javac>
 	</target>
@@ -42,11 +42,11 @@
 			useDefaultListeners="false" 
 			listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter" 
 			failureproperty="test.failed">
-			
 			<!--xml test suite file -->
 			<xmlfileset dir="${suite}">
 				<include name="Suite.xml"/>
-			</xmlfileset>							
+			</xmlfileset>
+			<jvmarg value="-Dfile.encoding=UTF-8"/>
 		</testng>    		
 		<fail message="ERROR: One or more tests failed! Check test reports " if="test.failed" />		
 	</target>		

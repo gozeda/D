@@ -28,13 +28,9 @@ public class HelloWorld {
 	@Test
 	public void testOne() throws Exception {
 
-		driver.findElement(By.id("kw")).sendKeys("google");
-		driver.findElement(By.id("su")).click();
-		
-		String txtExpected = "¹ÙÍø";
-		String txtActual = driver.findElement(By.xpath("//h3/a[@class='OP_LOG_LINK c-text c-text-public c-text-mult c-gap-icon-left']")).getText();
-		System.out.println(txtActual);
-		
+		String txtExpected = "ç™¾åº¦ä¸€ä¸‹";
+		String txtActual = driver.findElement(By.xpath("//input[@id='su']")).getAttribute("value");
+		Thread.sleep(1000);
 		Assert.assertEquals(txtExpected, txtActual);
 	}
 
@@ -43,16 +39,16 @@ public class HelloWorld {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("test-type");
 
-		System.out.println("ÕıÔÚÆô¶¯Chromeä¯ÀÀÆ÷...");
+		System.out.println("æ­£åœ¨å¯åŠ¨Chromeæµè§ˆå™¨...");
 		System.setProperty("webdriver.chrome.driver", "files\\chromedriver.exe");
 		driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.println("Æô¶¯Chromeä¯ÀÀÆ÷Íê³É£¡");
+		System.out.println("å¯åŠ¨Chromeæµè§ˆå™¨å®Œæˆï¼");
 
 		driver.manage().window().maximize();
 
 		driver.get("https://www.baidu.com");
-		System.out.println("¼ÓÔØÖ¸¶¨Ò³ÃæÍê³É£¡");
+		System.out.println("åŠ è½½æŒ‡å®šé¡µé¢å®Œæˆï¼");
 	}
 	
 }
