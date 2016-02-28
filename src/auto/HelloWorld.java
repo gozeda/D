@@ -1,4 +1,4 @@
-package auto;
+﻿package auto;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -30,7 +30,7 @@ public class HelloWorld {
 
 		String txtExpected = "百度一下";
 		String txtActual = driver.findElement(By.xpath("//input[@id='su']")).getAttribute("value");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Assert.assertEquals(txtExpected, txtActual);
 	}
 
